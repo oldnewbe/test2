@@ -1,37 +1,22 @@
- # Import the modules
-import sys
 import random
 
-ans = True
+def magic8ball():
+    response = input("(Press 'any key' for answer and 'quit' to exit)\nWhat is your question?\n")
+    Eightball_answers = [
+        "It is certain",
+        "Outlook good",
+        "You may rely on it",
+        "Ask again later",
+        "Concentrate and ask again",
+        "Reply hazy, try again",
+        "My reply is no",
+        "My sources say no"
+        ]
+    
+    if response == "quit":
+        print("Have A Good Day!")
+    else:
+        print(random.choice(Eightball_answers), "\n")
+        magic8ball()
 
-while ans:
-    question = raw_input("Ask the magic 8 ball a question: (press enter to quit) ")
-    
-    answers = random.randint(1,8)
-    
-    if question == "":
-        sys.exit()
-    
-    elif answers == 1:
-        print ("It is certain")
-    
-    elif answers == 2:
-        print ("Outlook good")
-    
-    elif answers == 3:
-        print ("You may rely on it")
-    
-    elif answers == 4:
-        print ("Ask again later")
-    
-    elif answers == 5:
-        print ("Concentrate and ask again")
-    
-    elif answers == 6:
-        print ("Reply hazy, try again")
-    
-    elif answers == 7:
-        print ("My reply is no")
-    
-    elif answers == 8:
-        print ("My sources say no")
+magic8ball()
